@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Choose room page  -->
+    <div class="chooseRoom">
+        <div class="createRoom"><button onclick="createRoomPage()">CREATE ROOM</button></div>
+        <div class="joinRoom"><button onclick="joinRoomPage()">JOIN ROOM</button></div>
+    </div>
+    <!-- Create room page  -->
+    <div class="createRoomPage">
+        <div class="roomcode">60052</div>
+        <BR></BR>
+        <h1>Share It With Your Friends</h1>
+    </div>
+    <!-- Join room Page  -->
+    <div class="joinRoomPage">
+        <form action="">
+            <input type="number" name="" id="roomcode" placeholder="Enter code" maxlength="5" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <br>
+            <br>
+            <button id="joinroombtn">Join</button>
+            <p class="msg-box" style="margin-top: 4rem; position: absolute; left: 50%;transform:translateX(-50%);color:red;display:none;">Invalid join code</p>
+        </form>
+    </div>
+    <div class="lobby">
+        <nav>
+            <div class="score_area">
+                <div class="your_score">
+                    <h2>Your score:</h2>
+                    <br>
+                    <h2 id="score">0</h2>
+                </div>
+                <div class="opponent_score">
+                    <h2>Rival's score:</h2>
+                    <br>
+                    <h2 id="rivalscore">0</h2>
+                </div>
+            </div>
+            <div class="time-left-area">
+                <div class="time-left">
+                    <h2>Time Left:</h2>
+                    <h2 id="time-left">60</h2>
+                </div>
+            </div>
+        </nav>
+        <div class="play_area">
+            <div class="grid">
+                <div class="square" id="1">
+                    <div class="hole">
+                        <div class="mole">
+                            <div class="eyes">
+                                <div class="eye" id="eye1"></div>
+                                <div class="eye" id="eye2"></div>
+                            </div>
+                            <div class="mouth"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="square" id="2">
+                    <div class="hole"></div>
+                </div>
+                <div class="square" id="3">
+                    <div class="hole"></div>
+                </div>
+                <div class="square" id="4">
+                    <div class="hole"></div>
+                </div>
+                <div class="square" id="5">
+                    <div class="hole"></div>
+                </div>
+                <div class="square" id="6">
+                    <div class="hole"></div>
+                </div>
+                <div class="square" id="7">
+                    <div class="hole"></div>
+                </div>
+                <div class="square" id="8">
+                    <div class="hole"></div>
+                </div>
+                <div class="square" id="9">
+                    <div class="hole"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="checkwin">
+        <div class="your_score">
+            <h2><span>Your score: </span><span id="finalscore">45</span></h2>
+        </div>
+        <div class="rival_score">
+            <h2><span>Rival's score: </span><span id="finalrivalscore">35</span></h2>
+        </div>
+        <h1 class="won"></h1>
+        <h1 class="lost"></h1>
+    </div>
+    <div class="creator">
+        <h1>Created by<br>Rakesh Jaiswal</h1>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
